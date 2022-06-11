@@ -3,6 +3,7 @@
 
 generator client {
   provider = "prisma-client-js"
+  previewFeatures = ["fullTextSearch", "fullTextIndex"]
 }
 
 datasource db {
@@ -25,5 +26,6 @@ model Story {
   end_date	DateTime   @default(now())
   members	   Int
   rated	  String
+
 }
 
