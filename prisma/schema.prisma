@@ -10,24 +10,20 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
+model Story {
   id    Int     @default(autoincrement()) @id
-  email String  @unique
-  name  String?
-  posts Post[]
+  mal_id   Int
+  url    String 
+  image_url	  String
+  title	  String
+  airing	Boolean
+  synopsis	String
+  type	String
+  episodes	Float
+  score	  Float
+  start_date	DateTime   @default(now())
+  end_date	DateTime   @default(now())
+  members	   Int
+  rated	  String
 }
 
-model Post {
-  id        Int     @default(autoincrement()) @id
-  title     String
-  content   String?
-  published Boolean @default(false)
-  author    User?   @relation(fields: [authorId], references: [id])
-  authorId  Int?
-}
-
-model Blog {
-  id        Int     @default(autoincrement()) @id
-  name     String
-  
-}
