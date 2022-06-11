@@ -1,6 +1,6 @@
 import { UpdatePostDto } from './dto/update_post.dto';
 import { Prisma } from '@prisma/client';
-import { PrismaService } from './../prisma.service';
+import { PrismaService } from '../prisma_service/prisma.service';
 import { Injectable } from '@nestjs/common';
 import { QueryPost } from './dto/query_post.dto';
 
